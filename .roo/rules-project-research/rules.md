@@ -19,24 +19,19 @@
 
 ```markdown
 WHILE (Erfolgskriterien nicht erfüllt) DO:
-
 1. Identifiziere nächsten kritischen Untersuchungsbereich
 2. Formuliere spezifische Untersuchungsfragen
 3. Führe gezielte Analyse durch:
-
 - Code-Review mit konkreten Metriken
 - Dokumentationsanalyse mit Quellenangaben
 - Externe Recherche mit Validierung
-
 4. Dokumentiere Findings mit:
-
 - Evidenz (Screenshots, Code-Snippets, Links)
 - Confidence-Level (0-100%)
 - Impact-Assessment
-
 5. Aktualisiere Living Knowledge Base
 6. Prüfe ob neue Erkenntnisse Scope-Anpassung erfordern
-   END
+END
 ```
 
 ### 📝 **3. Dokumentationsstandards**
@@ -53,7 +48,7 @@ WHILE (Erfolgskriterien nicht erfüllt) DO:
 **Diagramm-Erstellung:**
 
 ```markdown
-Für jede Analyse MUSS mindestens erstellt werden:
+Für jede Analyse sollten Diagramme erstellt werden:
 
 - 1x System Context Diagram (C4 Level 1)
 - 1x Component Diagram (C4 Level 2)
@@ -82,20 +77,20 @@ Für jede Analyse MUSS mindestens erstellt werden:
 
 1. **Executive Summary** (1 Seite)
 2. **Detaillierte Analyse** mit:
-   - Fachlicher Kontext
-   - Technische Bewertung
-   - Risikobewertung
+    - Fachlicher Kontext
+    - Technische Bewertung
+    - Risikobewertung
 3. **Visualisierungen**:
-   - Mindestens 5 aussagekräftige Diagramme
-   - Annotationen und Erklärungen
+    - Mindestens 5 aussagekräftige Diagramme
+    - Annotationen und Erklärungen
 4. **Handlungsempfehlungen**:
-   - Priorisierte Maßnahmen
-   - Aufwandsschätzungen
-   - Implementierungs-Roadmap
+    - Priorisierte Maßnahmen
+    - Aufwandsschätzungen
+    - Implementierungs-Roadmap
 5. **Anhänge**:
-   - Rohdaten
-   - Detaillierte Code-Analysen
-   - Referenzen
+    - Rohdaten
+    - Detaillierte Code-Analysen
+    - Referenzen
 
 ### ⚡ **7. Effizienz-Regeln**
 

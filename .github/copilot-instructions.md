@@ -21,8 +21,8 @@ MYPROJECT Clean Architecture patterns.
 
 ### Core Technologies
 
-- **Language**: Java LTS (utilize modern features)
-- **Framework**: Spring Boot with Maven
+- **Language**: Java 21 (utilize modern features)
+- **Framework**: Spring Boot 3.x with Maven
 - **Dependencies**: Spring Web, Spring Data JPA, Lombok, PostgreSQL driver
 - **Testing**: JUnit, Cucumber for use case tests, Integration tests for adapters
 
@@ -33,7 +33,6 @@ MYPROJECT Clean Architecture patterns.
 - Adapter pattern for external integrations
 - Factory methods for domain object creation
 - Component tests via Cucumber features
-- Event Driven Architecture with Google Cloud Run serverless components
 
 ## Documentation & Project Structure
 
@@ -44,7 +43,7 @@ MYPROJECT Clean Architecture patterns.
 - `@/docs/ARCHITECTURE.md` - System architecture guidelines
 - `@/docs/ONBOARDING.md` - Project setup and conventions
 - `@/README.md` - Project overview
-- All files in `@/docs/` directory - further documentation
+- All files in `@/docs/` directory
 
 **Documentation Compliance Rule**: If your implementation deviates from documented architecture, you MUST:
 
@@ -61,31 +60,6 @@ MYPROJECT Clean Architecture patterns.
 - Name factory methods to describe object state (e.g., `neu()` for new objects)
 - Ensure all domain objects maintain invariants through factory methods
 
-### Event-Driven Architecture Guidelines
-
-#### Core Principles
-
-- Implement domain-driven microservices where each service owns its aggregate root state
-- All aggregate root changes MUST occur within the responsible microservice
-- Communicate state changes via delta events (not full state)
-- Services materialize needed external state by listening to all relevant events
-
-#### Event vs Command Distinction
-
-- Events: State facts that cannot be rejected. No specific recipient. Contain only changed data (delta)
-- Commands: Direct service requests that can be rejected. May be sync (HTTP) or async (messaging)
-- Async Commands: MUST include response message with Response DTO
-
-#### Implementation Rules
-
-- NEVER create events to request actions from other components
-- Prefer asynchronous messaging over synchronous for decoupling
-- UI services (like manuelle-bearbeitung) listen to all relevant events and maintain optimized read databases
-- Name events and commands appropriately based on their purpose
-- Services filter unwanted events themselves
-
-Architecture Reference: See @/docs/src/04_loesungsstrategie/ARCHITECTURE.md for detailed specifications.
-
 ## Test-Driven Development Workflow
 
 ### The Strict TDD Cycle
@@ -94,8 +68,6 @@ Architecture Reference: See @/docs/src/04_loesungsstrategie/ARCHITECTURE.md for 
     - Write ONE failing test only
     - Test must describe desired behavior
     - Run test to confirm it fails
-   - Before writing any test, the agent MUST ask the user which test should be written first and provide at least two
-     concrete, goal-oriented suggestions for possible test cases, each describing a specific behavior to be tested.
 
 2. **GREEN Phase**:
     - Write minimal code to pass the test
@@ -152,12 +124,12 @@ Architecture Reference: See @/docs/src/04_loesungsstrategie/ARCHITECTURE.md for 
 
 ## Development Workflow
 
-### Task Decomposition (in Orchestrator Mode)
+### Task Decomposition
 
-1. Read all relevant documentation in Project Research Mode
-2. Check JIRA story (MPRJ-nnn) for requirements in Architect Mode
+1. Read all relevant documentation
+2. Check JIRA story (MPRJ-nnn) for requirements
 3. Break down into smallest testable units (2-4 hours max)
-4. Create step-by-step implementation plan (see @.roo/rules/rules-orchestrator/01-implementation-plan.md) in Orchestrator Mode
+4. Create step-by-step implementation plan
 5. Validate each step before proceeding
 
 ### Incremental Implementation
@@ -196,16 +168,14 @@ Architecture Reference: See @/docs/src/04_loesungsstrategie/ARCHITECTURE.md for 
 
 - Stories referenced as MPRJ-nnn
 - Access via Atlassian MCP tool
-- Example: MPRJ-1337 at https://myproject.atlassian.net/browse/MPRJ-1337
+- Example: MPRJ-nnn at https://myproject.atlassian.net/browse/MPRJ-1337
 - Check story details for acceptance criteria
-- JIRA Stories MUST be Markdown formatted!
-- For newlines you MUST append 2 spaces to the end of the preceding line
 
 ### Atlassian Confluence
 
 - Wiki documentation for the project
 - Base URL: https://myproject.atlassian.net/wiki/spaces/MP/pages/1337/MPRJ
-- **IMPORTANT**: Use Markdown, but make sure that the representation is set to "wiki" when writing to Confluence!
+- **IMPORTANT**: Use Confluence Storage Format, NOT Markdown
 - Architecture and business logic documented there
 
 ## Quality Gates
@@ -239,4 +209,4 @@ Architecture Reference: See @/docs/src/04_loesungsstrategie/ARCHITECTURE.md for 
 
 Remember: Quality emerges from disciplined practices. Every line of code must be tested, every name must be meaningful,
 and every architectural decision must align with documented patterns. When in doubt, consult the documentation first,
-then ask specific questions (one by one).
+then ask one specific question.

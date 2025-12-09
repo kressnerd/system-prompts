@@ -21,10 +21,10 @@ MANDATORY ACTION: Create Implementation Plan BEFORE writing any code
 - [ ] Research further details from the Confluence using Atlassian MCP tool in Project Research Mode
 - [ ] Create new implementation plan using the template from `@/docs/templates/implementation-plan-template.md`
 - [ ] Fill ALL sections of the template completely:
-  - Business Context (from JIRA story)
-  - Acceptance Criteria (from JIRA story)
-  - Technical Analysis (based on architecture review)
-  - Implementation phases with specific steps
+    - Business Context (from JIRA story)
+    - Acceptance Criteria (from JIRA story)
+    - Technical Analysis (based on architecture review)
+    - Implementation phases with specific steps
 - [ ] Save plan as: `@/docs/plans/MPRJ-nnn-implementation-plan.md`
 - [ ] Get human approval on plan BEFORE proceeding
 
@@ -40,16 +40,13 @@ After completing EACH step:
 
 1. **Mark step as complete**: Change `- [ ]` to `- [x]`
 2. **Update Current Status section**:
-
    ```markdown
    ### Current Status
-
    - **Current Phase**: Phase X
    - **Current Step**: Step X.Y
    - **Blockers**: [Any blockers encountered]
    - **Questions**: [Any pending questions]
    ```
-
 3. **Update Completion Log** when finishing a phase:
    ```markdown
    | Phase X | ✅ | 2h 15min | [Any relevant notes] |
@@ -87,16 +84,13 @@ If implementation requires deviation from plan:
 
 1. **STOP** immediately
 2. **Document** the required deviation in plan:
-
    ```markdown
    ### Deviation Log
-
    - **Step**: X.Y
    - **Reason**: [Why deviation is needed]
    - **Proposed Change**: [What needs to be different]
    - **Impact**: [How this affects other steps]
    ```
-
 3. **Ask**: "The implementation plan specifies X, but I need to do Y because [reason]. Should I update the plan and
    proceed?"
 4. **Wait** for approval
@@ -114,16 +108,13 @@ When all phases are complete:
 - [ ] Verify all acceptance criteria are met
 - [ ] Update plan status to `COMPLETED`
 - [ ] Add completion summary:
-
   ```markdown
   ## Completion Summary
-
   - **Completed Date**: YYYY-MM-DD
   - **Total Duration**: X hours
   - **Deviations**: [List any deviations from original plan]
   - **Lessons Learned**: [Key insights for future implementations]
   ```
-
 - [ ] Link completed plan in JIRA story
 - [ ] Archive plan to `@/docs/plans/completed/`
 
