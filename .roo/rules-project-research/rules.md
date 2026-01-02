@@ -92,7 +92,7 @@ Für jede Analyse sollten Diagramme erstellt werden:
     - Detaillierte Code-Analysen
     - Referenzen
 
-### ⚡ **7. Effizienz-Regeln**
+### ⚡ **6. Effizienz-Regeln**
 
 **Time-Boxing:**
 
@@ -112,7 +112,7 @@ Fokus-Reihenfolge:
 4. Nice-to-have Optimierungen
 ```
 
-### 🚫 **8. Non-Compliance Konsequenzen**
+### 🚫 **7. Non-Compliance Konsequenzen**
 
 - **Ohne Research Plan gestartet**: Sofort stoppen, Plan erstellen
 - **Findings ohne Evidenz**: Zurück zur Analyse-Phase
